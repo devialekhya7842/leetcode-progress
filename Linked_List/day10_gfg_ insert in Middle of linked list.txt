@@ -1,0 +1,43 @@
+#day10: insert in Middle of linked list
+#link: https://www.geeksforgeeks.org/problems/insert-in-middle-of-linked-list/
+#date:29-11-2025
+
+code 
+'''
+    Your task is to insert a new node in 
+	the middle of the linked list with
+	the given value.
+	
+	{
+		# Node Class
+		class Node:
+		    def __init__(self, data):   # data -> value stored in node
+		        self.data = data
+		        self.next = None
+	}
+	
+	Function Arguments: head (head of linked list), node 
+	(node to be inserted in middle)
+	Return Type: None, just insert the new node at mid.
+'''
+#Function to insert a node in the middle of the linked list.
+class Solution:
+    def insertInMiddle(self, head, x):
+        #code here
+        node=Node(x)
+        if head == None:
+            return node
+        if head.next == None:
+            head.next=node
+            return head
+        slow=head
+        flow=head
+        
+        while(flow.next!= None and flow.next.next != None):
+            slow=slow.next
+            flow=flow.next.next
+        
+        node.next=slow.next
+        slow.next=node
+            
+        return head

@@ -1,0 +1,26 @@
+#day10: is linked list length even?
+#link:https://www.geeksforgeeks.org/problems/linked-list-length-even-or-odd/
+
+#date: 20-11-2025
+
+code: class Solution:
+    # your task is to complete this function
+    # function should return false if length is even
+    # else return true
+    def isLengthEven(self, head):
+        # Code here
+        
+        if head==None:
+            return 
+        if head.next==None:
+            return False
+        if head.next.next ==None:
+            return True
+        
+        
+        while(head.next != None and head.next.next != None):
+            head=head.next.next
+        if head.next == None:
+            return False
+        if head.next.next == None:
+            return True

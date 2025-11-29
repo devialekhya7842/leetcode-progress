@@ -1,0 +1,43 @@
+#day10: add two numbers using linked list
+#link:https://leetcode.com/problems/add-two-numbers/
+#date:29-11-2025
+
+
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: Optional[ListNode]
+        :type l2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        carry=0
+        dummy=ListNode(-1)
+        t1=l1
+        t2=l2
+        curr=dummy
+        while (t1!=None or t2 != None):
+            summ=carry
+            if t1:
+                summ= summ+t1.val
+            if t2:
+                summ=summ+t2.val
+            new_node=ListNode(summ%10)
+            carry=summ//10
+            curr.next=new_node
+            curr=curr.next
+            if t1:
+                t1=t1.next
+            if t2:
+                t2=t2.next
+            if carry:
+                new_node=ListNode(carry)
+                curr.next=new_node
+        return dummy.next
+
+        

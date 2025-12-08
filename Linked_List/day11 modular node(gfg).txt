@@ -1,0 +1,35 @@
+#day11: modular node(gfg)
+#link:https://www.geeksforgeeks.org/problems/modular-node/
+#date:8-12-2025
+
+
+Given the head of a Singly Linked List and a number k, the task is to find the data of the modular node of the linked list. If no such index is present return -1.
+
+A modular node is defined as the last node in the linked list whose index is divisible by k (i%k==0). 
+
+Note: 1-based indexing is followed
+
+code:
+'''
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+'''
+class Solution:
+    def modularNode(self, head, k):
+        # Code Here
+        l=-1
+        i=0
+        if head ==None:
+            return 
+        temp=head
+        while (temp != None):
+            i+=1
+            if i % k == 0:
+                l=temp.data
+                temp=temp.next
+            else:
+                temp=temp.next
+        return l
+        

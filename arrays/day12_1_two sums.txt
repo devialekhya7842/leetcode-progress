@@ -1,0 +1,21 @@
+#day12: two sums
+#link:https://leetcode.com/problems/two-sum/description/
+#date:11-12-2025
+
+code:
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hashmap={}
+        for i, nums in enumerate(nums):
+            dif=target-nums
+            if dif in hashmap:
+                return [hashmap[dif], i]
+            hashmap[nums]=i
+    
+
+        

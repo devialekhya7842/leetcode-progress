@@ -1,0 +1,28 @@
+#day13_longest common prefix
+#link: https://leetcode.com/problems/longest-common-prefix/?envType=problem-list-v2&envId=array
+#date: 19-12-2025
+
+
+
+
+
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        strs.sort()
+        #print(strs)
+        f=strs[0]
+        l=strs[-1]
+        s=""
+        for i in range(0, min(len(f), len(l))):
+            if f[i]==l[i]:
+                s+=f[i]
+            else:
+                return s
+        return s
+
+        

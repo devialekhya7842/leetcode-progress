@@ -1,0 +1,22 @@
+#day13: one odd count(geeksforgeeks)
+#link:https://www.geeksforgeeks.org/problems/find-the-odd-occurence4820/1?page=1&category=Arrays,python&difficulty=Basic&status=unsolved&sortBy=submissions
+date: 19-12-2025
+
+
+code: class Solution:
+    def getOddOccurrence(self, arr):
+        # code here 
+        arr.sort()
+        d={}
+        # s=set(arr)
+        # for i in s:
+        #     d[i]=1
+        # print(d)
+        for i in arr:
+            d[i]=d.get(i,0)+1
+        for k,v in d.items():
+            if v %2 !=0:
+                return k
+            
+            
+        

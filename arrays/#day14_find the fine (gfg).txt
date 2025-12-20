@@ -1,0 +1,26 @@
+#day14_find the fine (gfg)
+#link: 
+#date: 20-12-2025
+
+code:
+#User function Template for python3
+
+class Solution:
+    def totalFine(self, date, car, fine):
+        #Code here
+        tot=0
+        if date%2==0:
+            for i in range(0,len(car)):
+                if car[i] %2 !=0:
+                    tot+=fine[i]
+        if date%2!=0:
+            for i in range(0,len(car)):
+                if car[i] %2 ==0:
+                    tot+=fine[i]
+        return tot
+        
+                    
+                    
+    
+    
+    

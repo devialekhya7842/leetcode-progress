@@ -1,0 +1,17 @@
+#day14_second largest(geeksforgeeks)
+#link:https://www.geeksforgeeks.org/problems/second-largest3735/1
+#date:20-12-2025
+
+code 
+class Solution:
+    def getSecondLargest(self, arr):
+        # Code Here
+        lar=arr[0]
+        for i in range(1, len(arr)):
+            if arr[i]>lar:
+                lar=arr[i]
+        s_lar=-1
+        for i in range(0, len(arr)):
+            if arr[i]<lar and s_lar<arr[i]:
+                s_lar=arr[i]
+        return s_lar

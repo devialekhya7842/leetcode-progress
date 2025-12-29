@@ -1,0 +1,17 @@
+#day16: remove duplicates from sorted array (gfg)
+#link:https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1
+#date: 29-12-2025
+
+
+
+code:
+class Solution:
+    def removeDuplicates(self, arr):
+        # code here 
+        
+        i=0
+        for j in range(0, len(arr)):
+            if arr[i]!=arr[j]:
+                i=i+1
+                arr[i],arr[j]=arr[j],arr[i]
+        return arr[0:i+1]

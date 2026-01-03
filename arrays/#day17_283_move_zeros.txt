@@ -1,0 +1,18 @@
+#day17 283: move zeros
+#link:https://leetcode.com/problems/move-zeroes/description/?envType=problem-list-v2&envId=array
+#date:03-01-2026
+
+code: 
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        j=0
+        for i in range(0, len(nums)):
+            if nums[i]!=0:
+                nums[j],nums[i]=nums[i],nums[j]
+                j=j+1
+
+
+        
